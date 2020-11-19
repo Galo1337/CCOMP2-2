@@ -23,12 +23,14 @@ class Vehicle {
         }
 };
 
+// Car ES UN Vehicle
 class Car : public Vehicle {
 
         string style;
     public:
         Car(const string l, const int y, const string s) :
                 Vehicle(l, y), style(s) {}
+
         const string &getStyle() {
             return style;
         }
@@ -43,7 +45,9 @@ int main() {
 
     Car c("vp4-160", 1660, "Deportivo");
 
-    cout << c.getDesc() << endl;
+    Vehicle *ptr = &c;
+
+    cout << ptr->getDesc() << endl;
 
     return 0;
 }
